@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What is the donor's name?
+      </h1>
+
+      <form class="form" action="/question-dob" method="post">
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="width-5">
+    Title
+  </label>
+  <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    First name
+  </label>
+  <input class="govuk-input" id="first-name" name="first-name" type="text" spellcheck="false" autocomplete="name">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="middle-name">
+    Middle names
+  </label>
+  <input class="govuk-input" id="middle-name" name="middle-name" type="text" spellcheck="false" autocomplete="name">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last name
+  </label>
+  <input class="govuk-input" id="last-name" name="last-name" type="text" spellcheck="false" autocomplete="name">
+</div>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Is this person known by any other names?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec semper odio, quis viverra dui. Integer congue nisl id felis ultricies, sit amet dictum massa facilisis.
+  </div>
+</details>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

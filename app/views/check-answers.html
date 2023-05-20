@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check donor's details
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "What is the donor's name?"
+            },
+            value: {
+              text: "Mr John Paul Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/question-name",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What is the donor's date of birth?"
+            },
+            value: {
+              text: "27 3 1980"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/question-dob",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What is the donor's email address?"
+            },
+            value: {
+              text: "jdoe@email.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/question-email",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+		  ,
+		  {
+            key: {
+              text: "What is the donor's address?"
+            },
+            value: {
+              text: "12 High Street, London, AB12 NH23"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/question-address",
+                  text: "Change",
+                  visuallyHiddenText: "Question 4"
+                }
+              ]
+            }
+          }
+		  ,
+		  {
+            key: {
+              text: "Is the donor able to sign the LPA?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/question-able-to-sign",
+                  text: "Change",
+                  visuallyHiddenText: "Question 5"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save details"
+        }) }}
+		
+	<a href="/index" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+	  Cancel
+	</a>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
