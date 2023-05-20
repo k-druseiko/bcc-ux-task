@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <p>
+	  We'll use your answers to the questions that follow to create an LPA that you can save and print, sign and then send to the Office of the Public Guardian for registration.
+    </p>
+
+    <p>
+      We'll save your LPA as you progress so you don't need to do it all in one go.
+    </p>
+
+    <p>
+      If this is the first time you're making an LPA you may wish to <a href="#">find out more about how to prepare</a>.
+    </p>
+	  
+	<div class="govuk-inset-text">
+      This LPA covers property and financial affairs.
+	</div>
+
+	<h2 class="govuk-heading-l">
+	  Who is the donor for this LPA?
+	</h2>
+	
+	<p>
+      The 'donor' is the person appointing other people to make decisions on their behalf. The donor:
+    </p>
+
+	<ul class="govuk-list govuk-list--bullet">
+	  <li>must be 18 or over</li>
+	  <li>must be able to make their own decisions when they create the LPA - this is known as having mental capacity</li>
+	</ul>
+	
+	<p>
+      Only the donor can make decisions about their LPA and the people to involve.
+    </p>
+	
+	<p class="govuk-body"><a href="#" class="govuk-link">Find out more about being a donor</a></p>
+	
+	
+	<a href="/question-name" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+	  Add donor details
+	</a>
+
+    <p>
+      Your <a href="#">feedback</a> will help us to improve
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
